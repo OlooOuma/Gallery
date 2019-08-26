@@ -1,0 +1,104 @@
+{% extends 'layout.html' %}
+{% block content %}
+<!-- Page Preloder -->
+{% include "navbar.html" %}
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+
+<!-- Top right elements -->
+<div class="spacial-controls">
+    <div class="search-switch"><img src="static/img/search-icon.png" alt=""></div>
+    <div class="nav-switch-warp">
+        <div class="nav-switch">
+            <div class="ns-bar"></div>
+        </div>
+    </div>
+</div>
+<!-- Top right elements end -->
+
+<div class="main-warp">
+    <!-- Page section -->
+    <div class="page-section home-page">
+        <div class="hero-slider owl-carousel">
+            <div class="slider-item d-flex align-items-center set-bg" data-setbg="static/img/slider-bg-1.jpg"
+                data-hash="slide-1">
+                <div class="si-text-box">
+                    <h3 class="container">Photography</h3>
+                    <p class="container">A photograph is an image created by light falling on a photosensitive surface,
+                        usually photographic film or an electronic image sensor, such as a CCD or a CMOS chip
+                    </p>
+                </div>
+                <div class="next-slide-show set-bg" data-setbg="static/img/slider-bg-2.jpg">
+                    <a href="#slide-2" class="ns-btn">Next</a>
+                </div>
+            </div>
+            <div class="slider-item d-flex align-items-center set-bg" data-setbg="static/img/slider-bg-2.jpg"
+                data-hash="slide-2">
+                <div class="si-text-box">
+                    <h3 class="container">Animals</h3>
+                    <p class="container">Animals are multicellular eukaryotic organisms that form the biological kingdom Animalia. 
+                    </p>
+
+                </div>
+                <div class="next-slide-show set-bg animated fadeIn slower" data-setbg="static/img/madam1.jpeg">
+                    <a href="#slide-3" class="ns-btn">Next</a>
+                </div>
+            </div>
+            <div class="slider-item d-flex align-items-center set-bg" data-setbg="static/img/madam1.jpeg"
+                data-hash="slide-3">
+                <div class="si-text-box">
+                    <h3 class="container">Madam</h3>
+                    <p class="container">
+                    </p> This is a polite and formal form of address for women.
+                </div>
+                <div class="next-slide-show set-bg" data-setbg="static/img/food1.jpeg">
+                    <a href="#slide-4" class="ns-btn">Next</a>
+                </div>
+            </div>
+            <div class="slider-item d-flex align-items-center set-bg" data-setbg="static/img/food1.jpeg"
+                data-hash="slide-4">
+                <div class="si-text-box">
+                    <h3 class="container">Food</h3>
+                    <p class="container">Food is any substance[1] consumed to provide nutritional support for an
+                            organism. It is usually of plant or animal origin, and contains essential nutrients, such as
+                            carbohydrates, fats, proteins, vitamins, or minerals. The substance is ingested by an organism
+                            and assimilated by the organism's cells to provide energy, maintain life, or stimulate growth.
+                    </p>
+                </div>
+                <div class="next-slide-show set-bg" data-setbg="static/img/love2.jpeg">
+                    <a href="#slide-5" class="ns-btn">Next</a>
+                </div>
+            </div>
+            <div class="slider-item d-flex align-items-center set-bg" data-setbg="static/img/love2.jpeg" height="100px"
+                data-hash="slide-5">
+                <div class="si-text-box">
+                    <h3 class="container">Love</h3>
+                    <p class="container">Love encompasses a range of strong and positive emotional and mental states, from the most sublime virtue or good habit, the deepest interpersonal affection and to the simplest pleasure
+                    </p>
+                </div>
+                <div class="next-slide-show set-bg" data-setbg="static/img/slider-bg-1.jpg">
+                    <a href="#slide-1" class="ns-btn">Next</a>
+                </div>
+            </div>
+
+        </div>
+        <div id="snh-1"></div>
+    </div>
+    <!-- Page section end-->
+</div>
+
+<!-- Search model -->
+<div class="search-model">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-switch">x</div>
+        <form class="search-moderl-form" action="{% url 'search_results' %}">
+            <input type="text" id="search-input" placeholder="Search here....." name="searchItem">
+        </form>
+    </div>
+</div>
+<!-- Search model end -->
+
+
+{% endblock %}

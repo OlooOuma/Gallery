@@ -1,0 +1,62 @@
+{%extends 'layout.html'%}
+
+{% block content %}
+{% include "navbar.html" %}
+<!-- Top right elements -->
+<div class="spacial-controls">
+    <div class="search-switch"><img src="static/img/search-icon.png" alt=""></div>
+    <div class="nav-switch-warp">
+        <div class="nav-switch">
+            <div class="ns-bar"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Top right elements end -->
+<div class="main-warp">
+    <ul class="list-inline">
+        {% for location in location %}
+        <h6 class="list-inline-item text-body"><a href="/location/{{location.id}}">{{location}}</a></h6>
+        {% endfor %}
+    </ul>
+    <!-- Page section -->
+    <div class="page-section gallery-page">
+
+        <div class="portfolio-gallery">
+
+            {% for image in images %}
+            <div class="gallery-item">
+                <img src="{{image.image.url}}" alt="">
+                <div class="hover-links animated flipInY">
+                    <!-- <a href="" class="site-btn sb-light">Next</a> -->
+                    <p class="text-center"><i class="fas fa-file-signature"></i>
+                        {{ image.Name }} </p>
+                    <p class="text-center"><i class="fas fa-map-marker-alt"></i>
+                        {{image.location}} </p>
+                    <p class="text-center"><i class="far fa-object-group"></i>
+                        {{image.category}} </p>
+                    <input class="form-control hide" type="text"
+                        value="https://wilst-gallery.herokuapp.com{{image.image.url}}" id="{{image.id}}-url">
+                    <button id="white" class="btn btn-sm btn-outline-bleu-grey" onclick="copyToClipboard('{{image.id}}-url')">Copy
+                        Image
+                        Url</button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Search model -->
+<div class="search-model">
+    <i class="fas fa-search"></i>
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-switch">x</div>
+        <form class="search-moderl-form" action="{% url 'search_results' %}">
+            <input type="text" id="search-input" placeholder="Search here.....">
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}
